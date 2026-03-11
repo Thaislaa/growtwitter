@@ -41,3 +41,8 @@
 .btn-card:hover {
   color: rgb(23, 23, 181);
 }
+
+.img-logo {
+  width: 40px;
+  margin-right: 8px;
+}
