@@ -72,14 +72,34 @@ export function Login() {
                             <InputLabel sx={{ fontSize: 14, mb: 0.5 }}>
                                 Username
                             </InputLabel>
-                            <TextField size="small" sx={{ mb: 1 }} />
+                            <TextField
+                                sx={{
+                                    mb: 1,
+                                    "& .MuiOutlinedInput-root": {
+                                        borderRadius: 2,
+                                        "& input": {
+                                            padding: "8px 4px"
+                                        }
+                                    }
+                                }}
+                            />
 
                             <InputLabel sx={{ fontSize: 14, mb: 0.5 }}>
                                 Password
                             </InputLabel>
-                            <TextField size="small" sx={{ mb: 1 }} />
+                            <TextField
+                                sx={{
+                                    mb: 1,
+                                    "& .MuiOutlinedInput-root": {
+                                        borderRadius: 2,
+                                        "& input": {
+                                            padding: "8px 4px"
+                                        }
+                                    }
+                                }}
+                            />
 
-                            <Button variant="contained" sx={{ mt: 1, backgroundColor: "#1D9BF0" }}>
+                            <Button variant="contained" sx={{ mt: 1, backgroundColor: "#1D9BF0", borderRadius: 2 }}>
                                 Entrar
                             </Button>
                         </form>
