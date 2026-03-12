@@ -3,6 +3,10 @@ import DeleteOutlineRoundedIcon from '@mui/icons-material/DeleteOutlineRounded';
 import './HomePage.css';
 import { Menu } from '../../components/Menu';
 import { TrendsCard } from '../../components/TrendsCard';
+import logo_growdev from "../../assets/images/logo-growdev.png";
+import icon_reply from "../../assets/images/icon_reply.svg"
+import icon_like from "../../assets/images/icon_like.svg";
+
 
 export function HomePage() {
     return (
@@ -24,7 +28,7 @@ export function HomePage() {
 
                         <div style={{ display: "flex", flexDirection: "row", padding: "12px" }}>
                             <div>
-                                <img src="https://i.postimg.cc/FF8XWg5L/logo-growdev-Ut-Js-S5.png" alt="Imagem usuário" className='img-logo' />
+                                <img src={logo_growdev} alt="Imagem usuário" className='img-logo' />
                             </div>
 
                             <div style={{ display: "flex", flexDirection: "column" }}>
@@ -54,7 +58,7 @@ export function HomePage() {
                                     <div style={{ display: "flex", marginTop: "8px", marginRight: "12px", flexDirection: "row" }}>
                                         <span style={{ fontSize: "12px", display: "flex", alignItems: "center", marginRight: "24px" }}>
                                             <img style={{ width: "12px", marginRight: "4px" }}
-                                                src="https://deploy-growtwitter.vercel.app/assets/icone_responder-51a8f819.svg"
+                                                src={icon_reply}
                                                 alt="Comentar"
                                             />
                                             0
@@ -62,8 +66,8 @@ export function HomePage() {
 
                                         <span style={{ fontSize: "12px", display: "flex", alignItems: "center", marginRight: "24px" }}>
                                             <img style={{ width: "12px", marginRight: "4px" }}
-                                                src="https://deploy-growtwitter.vercel.app/assets/icone_curtir-407e1295.svg"
-                                                alt="Comentar"
+                                                src={icon_like}
+                                                alt="Curtir"
                                             />
                                             0
                                         </span>
