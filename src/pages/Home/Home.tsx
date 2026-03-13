@@ -6,6 +6,7 @@ import { TrendsCard } from '../../components/TrendsCard';
 import logo_growdev from "../../assets/images/logo-growdev.png";
 import icon_reply from "../../assets/images/icon_reply.svg"
 import icon_like from "../../assets/images/icon_like.svg";
+import { Hr } from '../../components/Hr';
 
 
 export function Home() {
@@ -22,7 +23,7 @@ export function Home() {
 
                         <div>
                             <Typography variant='body1' sx={{ fontWeight: "bold", padding: "12px", color: "rgb(51, 51, 51)" }}>Página Inicial</Typography>
-                            <hr style={{ border: "1px solid  #e3e3e3" }} />
+                            <Hr />
                         </div>
 
 
@@ -79,7 +80,7 @@ export function Home() {
                                 </div>
                             </div>
                         </div>
-
+                        <Hr />
                     </Grid>
 
                     <Grid size={3}>

@@ -7,6 +7,7 @@ import logo_growdev from '../../assets/images/logo-growdev.png'
 import icon_reply from "../../assets/images/icon_reply.svg"
 import icon_like from "../../assets/images/icon_like.svg";
 import DeleteOutlineRoundedIcon from '@mui/icons-material/DeleteOutlineRounded';
+import { Hr } from "../../components/Hr";
 
 export function Profile() {
 
@@ -41,7 +42,7 @@ export function Profile() {
 
                     </div>
 
-                    <hr style={{ border: "1px solid  #e3e3e3" }} />
+                    <Hr />
 
                     <div style={{ paddingBottom: "45px" }}>
                         <div style={{ backgroundColor: "#1976d2", height: "132px", position: "relative" }}>
@@ -63,7 +64,7 @@ export function Profile() {
                         <Typography sx={{ color: "rgb(51, 51, 51)" }}>@growdev</Typography>
                     </div>
 
-                    <hr style={{ border: "1px solid  #e3e3e3" }} />
+                    <Hr />
 
                     <div style={{ display: "flex", flexDirection: "row", padding: "12px" }}>
                         <div>
@@ -118,7 +119,7 @@ export function Profile() {
                             </div>
                         </div>
                     </div>
-                    <hr style={{ border: "1px solid  #e3e3e3" }} />
+                    <Hr />
 
                 </Grid>
 
