@@ -1,4 +1,6 @@
-import { Card, CardContent, Link, Typography } from "@mui/material";
+import { Card, CardContent, Typography } from "@mui/material";
+import Link from "@mui/material/Link"
+import { Link as RouterLink } from "react-router-dom"
 
 export function TrendsCard() {
     return (
@@ -25,7 +27,11 @@ export function TrendsCard() {
                 <Typography variant='caption' sx={{ color: "rgb(51, 51, 51)", fontWeight: "bold" }}>Assunto sobre filmes e cinema</Typography>
             </CardContent>
 
-            <Link href="#" underline="none" sx={{ fontSize: "10px", ":hover": { color: "rgb(23, 23, 181)" } }}>
+            <Link
+                component={RouterLink}
+                underline="none"
+                to={"/explore"} 
+                sx={{ fontSize: "10px", ":hover": { color: "rgb(23, 23, 181)" } }}>
                 {'Mostrar mais'}
             </Link>
         </Card>
