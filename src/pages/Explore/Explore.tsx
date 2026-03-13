@@ -8,7 +8,6 @@ export function Explore() {
         <Container maxWidth="lg">
             <Grid container sx={{ height: '100vh', display: "flex", justifyContent: "center" }}>
 
-
                 <Grid size={2} sx={{ paddingTop: "16px", paddingRight: "8px", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
                     <Menu />
                 </Grid>
@@ -26,7 +25,6 @@ export function Explore() {
                     <TrendsCard />
                 </Grid>
             </Grid>
-
 
         </Container>
     )

@@ -1,6 +1,6 @@
 import { Container, Grid, Typography } from '@mui/material';
 import DeleteOutlineRoundedIcon from '@mui/icons-material/DeleteOutlineRounded';
-import './HomePage.css';
+import './Home.css';
 import { Menu } from '../../components/Menu';
 import { TrendsCard } from '../../components/TrendsCard';
 import logo_growdev from "../../assets/images/logo-growdev.png";
@@ -8,7 +8,7 @@ import icon_reply from "../../assets/images/icon_reply.svg"
 import icon_like from "../../assets/images/icon_like.svg";
 
 
-export function HomePage() {
+export function Home() {
     return (
         <>
             <Container maxWidth="lg">
