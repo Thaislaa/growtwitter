@@ -3,6 +3,10 @@ import { Menu } from "../../components/Menu";
 import { TrendsCard } from "../../components/TrendsCard";
 import icon_back from "../../assets/images/icon_back.svg";
 import { Link } from "react-router-dom";
+import logo_growdev from '../../assets/images/logo-growdev.png'
+import icon_reply from "../../assets/images/icon_reply.svg"
+import icon_like from "../../assets/images/icon_like.svg";
+import DeleteOutlineRoundedIcon from '@mui/icons-material/DeleteOutlineRounded';
 
 export function Profile() {
 
@@ -31,13 +35,91 @@ export function Profile() {
                             </div>
 
                             <div>
-                                <Typography sx={{ fontSize: "10px", color: " rgb(130, 130, 130)" }}>5 Tweets</Typography>
+                                <Typography sx={{ fontSize: "10px", color: " rgb(130, 130, 130)" }}>1 Tweet</Typography>
                             </div>
                         </div>
 
                     </div>
 
                     <hr style={{ border: "1px solid  #e3e3e3" }} />
+
+                    <div style={{ paddingBottom: "45px" }}>
+                        <div style={{ backgroundColor: "#1976d2", height: "132px", position: "relative" }}>
+                            <img src={logo_growdev} alt="Logo Growdev" style={{
+                                width: "90px",
+                                height: "90px",
+                                borderRadius: "50%",
+                                position: "absolute",
+                                top: "100%",
+                                left: "55px",
+                                transform: "translate(-50%, -50%)",
+                                border: "1px solid #f6f4f4"
+                            }} />
+                        </div>
+                    </div>
+
+                    <div style={{ margin: "12px" }}>
+                        <Typography sx={{ fontSize: "14px", fontWeight: "bold", color: "rgb(51, 51, 51)" }}>Growdev</Typography>
+                        <Typography sx={{ color: "rgb(51, 51, 51)" }}>@growdev</Typography>
+                    </div>
+
+                    <hr style={{ border: "1px solid  #e3e3e3" }} />
+
+                    <div style={{ display: "flex", flexDirection: "row", padding: "12px" }}>
+                        <div>
+                            <img src={logo_growdev} alt="Imagem usuário" className='img-logo' />
+                        </div>
+
+                        <div style={{ display: "flex", flexDirection: "column" }}>
+                            <div style={{ display: "flex", flexDirection: "row" }}>
+                                <Typography
+                                    sx={{
+                                        color: 'rgb(51, 51, 51)',
+                                        fontSize: '12px',
+                                        fontWeight: 'bold',
+                                        mr: "8px"
+                                    }}
+                                >
+                                    Growdev
+                                </Typography>
+                                <Typography
+                                    sx={{ color: 'rgb(51, 51, 51)', fontSize: '12px' }}
+                                >
+                                    growdev • 3h
+                                </Typography>
+                            </div>
+
+                            <div>
+                                <Typography variant='caption' sx={{ color: "rgb(51, 51, 51)" }}>Mensagem</Typography>
+                            </div>
+
+                            <div>
+                                <div style={{ display: "flex", marginTop: "8px", marginRight: "12px", flexDirection: "row" }}>
+                                    <span style={{ fontSize: "12px", display: "flex", alignItems: "center", marginRight: "24px" }}>
+                                        <img style={{ width: "12px", marginRight: "4px" }}
+                                            src={icon_reply}
+                                            alt="Comentar"
+                                        />
+                                        0
+                                    </span>
+
+                                    <span style={{ fontSize: "12px", display: "flex", alignItems: "center", marginRight: "24px" }}>
+                                        <img style={{ width: "12px", marginRight: "4px" }}
+                                            src={icon_like}
+                                            alt="Curtir"
+                                        />
+                                        0
+                                    </span>
+
+                                    <span style={{ fontSize: "12px", display: "flex", alignItems: "center", marginRight: "24px" }}>
+                                        <DeleteOutlineRoundedIcon style={{ width: "14px", marginRight: "4px", color: "#828282" }} />
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr style={{ border: "1px solid  #e3e3e3" }} />
+
                 </Grid>
 
                 <Grid size={3}>
