@@ -17,7 +17,7 @@ class App {
     this.app.use(express.json());
     this.app.use(
       cors({
-        origin: ["http://localhost:5173", "https://growtwitter-1.onrender.com"],
+        origin: ["http://localhost:5173"],
         credentials: true,
       }),
     );
