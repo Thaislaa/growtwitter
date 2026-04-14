@@ -8,7 +8,7 @@ import { TweetsRoutes } from './growtwitter-api/dist/routes/tweets.routes.js'
 const app = express()
 const PORT = process.env.PORT || 3000
 
-const distPath = path.resolve('dist')
+const distPath = path.join(process.cwd(), 'dist')
 
 app.use(express.json())
 
