@@ -22,7 +22,7 @@ app.use('/tweets', TweetsRoutes.bind())
 
 app.use(express.static(distPath))
 
-app.get('*', (req, res) => {
+app.use((req, res) => {
   res.sendFile(path.join(distPath, 'index.html'))
 })
 
