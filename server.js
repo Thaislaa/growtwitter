@@ -12,15 +12,17 @@ const distPath = path.join(process.cwd(), 'dist')
 
 app.use(express.json())
 
-// BACKEND
+app.get('/health', (req, res) => {
+  res.json({ ok: true })
+})
+
 app.use('/auth', AuthRoutes.bind())
 app.use('/users', UsersRoutes.bind())
 app.use('/tweets', TweetsRoutes.bind())
 
-// FRONTEND
 app.use(express.static(distPath))
 
-app.use((req, res) => {
+app.get('*', (req, res) => {
   res.sendFile(path.join(distPath, 'index.html'))
 })
 
