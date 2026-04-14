@@ -1,21 +1,17 @@
 import express from 'express'
 import path from 'path'
-import { fileURLToPath } from 'url'
-
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
 
 const app = express()
 const PORT = process.env.PORT || 3000
 
-// Servir arquivos buildados do Vite
-app.use(express.static(path.join(__dirname, 'dist')))
+const distPath = path.resolve('dist')
 
-// Fallback para index.html para todas as rotas que não existirem
-app.use((req, res) => {
-  res.sendFile(path.join(__dirname, 'dist', 'index.html'))
+app.use(express.static(distPath))
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(distPath, 'index.html'))
 })
 
 app.listen(PORT, '0.0.0.0', () => {
-  console.log(`✅ Server rodando em http://0.0.0.0:${PORT}`)
+  console.log(`✅ Server rodando na porta ${PORT}`)
 })

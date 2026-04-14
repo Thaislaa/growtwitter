@@ -53,6 +53,7 @@ export function Login() {
       localStorage.setItem('user', JSON.stringify(user))
       localStorage.setItem('userId', user.id)
 
+      console.log('LOGIN OK - indo para home')
       navigate('/home')
     } catch (error) {
       console.error(error)

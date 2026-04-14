@@ -10,7 +10,7 @@ export class AuthRoutes {
     const controller = new AuthController();
 
     router.post(
-      "/auth/login",
+      "/login",
       dataValidation([
         body("username").isLength({ min: 1 }),
         body("password").isLength({ min: 1 }),
@@ -19,7 +19,7 @@ export class AuthRoutes {
     );
 
     router.post(
-      "/auth/register",
+      "/register",
       dataValidation([
         body("name").isLength({ min: 3 }),
         body("username").isLength({ min: 3 }),

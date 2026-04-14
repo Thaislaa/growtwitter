@@ -25,7 +25,7 @@ class App {
 
   private initializeControllers(routers: express.Router[]) {
     routers.forEach((router) => {
-      this.app.use(router);
+      this.app.use("/auth", router);
     });
   }
 
