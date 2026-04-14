@@ -10,13 +10,11 @@ import {
 } from '@mui/material'
 import '../Login/Login.css'
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 
 export function Login() {
   const theme = useTheme()
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
-  const navigate = useNavigate()
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()

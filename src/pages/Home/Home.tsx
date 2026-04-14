@@ -49,12 +49,15 @@ export function Home({ toggleTheme }: HomeProps) {
     if (!token) return
 
     try {
-      const response = await fetch(`https://growtwitter-1.onrender.com/tweets/${id}`, {
-        method: 'DELETE',
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
+      const response = await fetch(
+        `https://growtwitter-1.onrender.com/tweets/${id}`,
+        {
+          method: 'DELETE',
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      )
 
       const data = await response.json()
 
