@@ -44,6 +44,11 @@ export function Home({ toggleTheme }: HomeProps) {
     setReplyTo(null)
   }
 
+  useEffect(() => {
+    console.log('🔥 Home montou')
+    loadFeed()
+  }, [])
+
   async function handleDeleteTweet(id: string) {
     const token = localStorage.getItem('token')
     if (!token) return
@@ -78,11 +83,30 @@ export function Home({ toggleTheme }: HomeProps) {
     const currentUserId = payload.id
 
     try {
-      const response = await fetch('https://growtwitter-1.onrender.com/feed', {
-        headers: { Authorization: `Bearer ${token}` },
-      })
+      const response = await fetch(
+        'https://growtwitter-1.onrender.com/tweets/feed',
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      )
 
-      const data = await response.json()
+      const text = await response.text()
+
+      console.log("STATUS:", response.status)
+      console.log("RAW RESPONSE:", text)
+
+      if (!response.ok) {
+        console.log("❌ ERRO HTTP")
+        return
+      }
+
+      let data
+      try {
+        data = JSON.parse(text)
+      } catch (err) {
+        console.log("❌ BACKEND NÃO ESTÁ RETORNANDO JSON")
+        return
+      }
 
       if (data.success) {
         const mappedTweets: Tweet[] = data.data.map((tweet: any) => ({
