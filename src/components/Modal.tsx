@@ -17,8 +17,8 @@ export function Modal({ handleClose, replyTo, reloadFeed }: ModalProps) {
     if (!token) return alert('Você precisa estar logado')
 
     const url = replyTo
-      ? 'http://localhost:3030/replies'
-      : 'http://localhost:3030/tweets'
+      ? 'https://growtwitter-1.onrender.com/replies'
+      : 'https://growtwitter-1.onrender.com/tweets'
 
     const body = replyTo ? { content, replyTo } : { content }
 

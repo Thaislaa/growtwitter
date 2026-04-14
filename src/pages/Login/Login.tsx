@@ -54,7 +54,7 @@ export function Login() {
       localStorage.setItem('userId', user.id)
 
       console.log('LOGIN OK - indo para home')
-      navigate('/home')
+      window.location.href = '/home'
     } catch (error) {
       console.error(error)
       alert('Erro ao tentar fazer login')

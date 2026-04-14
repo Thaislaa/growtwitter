@@ -49,7 +49,7 @@ export function Home({ toggleTheme }: HomeProps) {
     if (!token) return
 
     try {
-      const response = await fetch(`http://localhost:3030/tweets/${id}`, {
+      const response = await fetch(`https://growtwitter-1.onrender.com/tweets/${id}`, {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${token}`,
@@ -75,7 +75,7 @@ export function Home({ toggleTheme }: HomeProps) {
     const currentUserId = payload.id
 
     try {
-      const response = await fetch('http://localhost:3030/feed', {
+      const response = await fetch('https://growtwitter-1.onrender.com/feed', {
         headers: { Authorization: `Bearer ${token}` },
       })
 

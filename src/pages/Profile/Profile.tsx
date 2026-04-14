@@ -38,7 +38,7 @@ export function Profile({ toggleTheme }: ProfileProps) {
 
     try {
       const response = await fetch(
-        `http://localhost:3030/users/${userId}/tweets`,
+        `https://growtwitter-1.onrender.com/users/${userId}/tweets`,
         {
           method: 'GET',
           headers: {
@@ -77,7 +77,7 @@ export function Profile({ toggleTheme }: ProfileProps) {
     const token = localStorage.getItem('token')
 
     try {
-      const response = await fetch(`http://localhost:3030/tweets/${tweetId}`, {
+      const response = await fetch(`https://growtwitter-1.onrender.com/tweets/${tweetId}`, {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${token}`,

@@ -70,7 +70,7 @@ export function Post({
     try {
       const method = liked ? 'DELETE' : 'POST'
 
-      const response = await fetch('http://localhost:3030/likes', {
+      const response = await fetch('https://growtwitter-1.onrender.com/likes', {
         method,
         headers: {
           'Content-Type': 'application/json',
