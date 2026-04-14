@@ -12,7 +12,7 @@ const distPath = path.resolve('dist')
 
 app.use(express.json())
 
-// BACKEND 
+// BACKEND
 app.use('/auth', AuthRoutes.bind())
 app.use('/users', UsersRoutes.bind())
 app.use('/tweets', TweetsRoutes.bind())
