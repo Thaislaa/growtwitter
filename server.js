@@ -1,8 +1,8 @@
 import express from 'express'
 import path from 'path'
 
-import { AuthRoutes } from './src/routes/AuthRoutes.js'
-import { UsersRoutes } from './src/routes/UsersRoutes.js'
+import { AuthRoutes } from './growtwitter-api/build/routes/auth.routes.js'
+import { UsersRoutes } from './growtwitter-api/build/routes/users.routes.js'
 
 const app = express()
 const PORT = process.env.PORT || 3000
