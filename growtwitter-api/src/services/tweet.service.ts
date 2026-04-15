@@ -115,11 +115,15 @@ export class TweetService {
   }
 
   public async listTweetsByUserId(userId: string): Promise<Tweet[]> {
+    console.log("USER ID RECEBIDO:", userId);
+
     const tweetsDB = await prismaRepository.tweet.findMany({
       where: { type: TweetType.NORMAL, authorId: userId },
       orderBy: { createdAt: "desc" },
       include: { author: true },
     });
+
+    console.log("TWEETS ENCONTRADOS:", tweetsDB);
 
     const tweets: Tweet[] = [];
 
