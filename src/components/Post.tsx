@@ -70,14 +70,17 @@ export function Post({
     try {
       const method = liked ? 'DELETE' : 'POST'
 
-      const response = await fetch('https://growtwitter-1.onrender.com/likes', {
-        method,
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify({ tweetId: tweet.id }),
-      })
+      const response = await fetch(
+        'https://growtwitter-1.onrender.com/likes/likes',
+        {
+          method,
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({ tweetId: tweet.id }),
+        }
+      )
 
       const data = await response.json()
 
