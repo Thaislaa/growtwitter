@@ -29,6 +29,7 @@ export function Profile({ toggleTheme }: ProfileProps) {
   const theme = useTheme()
   const user = JSON.parse(localStorage.getItem('user') || '{}')
   const [tweets, setTweets] = useState<Tweet[]>([])
+  const [replyTo, setReplyTo] = useState<string | null>(null)
 
   async function loadTweets() {
     const userId = localStorage.getItem('userId')
@@ -106,15 +107,27 @@ export function Profile({ toggleTheme }: ProfileProps) {
 
   function handleTweetar() {
     setOpenModal(true)
+    setReplyTo(null)
   }
 
   function handleCloseModal() {
     setOpenModal(false)
   }
 
+  function handleOpenModal(tweetId: string) {
+    setReplyTo(tweetId)
+    setOpenModal(true)
+  }
+
   return (
     <>
-      {openModal && <Modal handleClose={handleCloseModal} />}
+      {openModal && (
+        <Modal
+          handleClose={handleCloseModal}
+          replyTo={replyTo}
+          reloadFeed={loadTweets}
+        />
+      )}
 
       <Box sx={{ backgroundColor: theme.palette.background.paper }}>
         <Container maxWidth="lg">
@@ -224,7 +237,11 @@ export function Profile({ toggleTheme }: ProfileProps) {
 
               {tweets.map((tweet) => (
                 <Fragment key={tweet.id}>
-                  <Post tweet={tweet} onDelete={handleDeleteTweet} />
+                  <Post
+                    tweet={tweet}
+                    onDelete={handleDeleteTweet}
+                    onOpenModal={handleOpenModal}
+                  />
                   <Hr />
                 </Fragment>
               ))}
