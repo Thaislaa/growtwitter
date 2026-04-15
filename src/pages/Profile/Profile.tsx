@@ -78,7 +78,7 @@ export function Profile({ toggleTheme }: ProfileProps) {
 
     try {
       const response = await fetch(
-        `https://growtwitter-1.onrender.com/tweets/${tweetId}`,
+        `https://growtwitter-1.onrender.com/tweets/tweets/${tweetId}`,
         {
           method: 'DELETE',
           headers: {
