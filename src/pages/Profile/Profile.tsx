@@ -48,26 +48,31 @@ export function Profile({ toggleTheme }: ProfileProps) {
         }
       )
 
-      const data = await response.json()
-      if (data.success) {
-        const authUserId = JSON.parse(localStorage.getItem('user') || '{}').id
+      console.log('STATUS:', response.status)
+      console.log('HEADERS:', response.headers)
 
-        const mappedTweets = data.data.map((tweet: any) => ({
-          id: tweet.id,
-          content: tweet.content,
-          createdAt: tweet.createdAt,
-          username: user.username,
-          name: user.name,
-          authorId: tweet.author.id,
-          imageUrl: user.imageUrl,
-          likesCount: tweet.likes.length,
-          likedByCurrentUser: tweet.likes.some(
-            (like: any) => like.author.id === authUserId
-          ),
-        }))
+      const text = await response.text()
+      console.log('RESPOSTA BRUTA:', text)
 
-        setTweets(mappedTweets)
-      }
+      //   if (data.success) {
+      //     const authUserId = JSON.parse(localStorage.getItem('user') || '{}').id
+
+      //     const mappedTweets = data.data.map((tweet: any) => ({
+      //       id: tweet.id,
+      //       content: tweet.content,
+      //       createdAt: tweet.createdAt,
+      //       username: user.username,
+      //       name: user.name,
+      //       authorId: tweet.author.id,
+      //       imageUrl: user.imageUrl,
+      //       likesCount: tweet.likes.length,
+      //       likedByCurrentUser: tweet.likes.some(
+      //         (like: any) => like.author.id === authUserId
+      //       ),
+      //     }))
+
+      //     setTweets(mappedTweets)
+      //   }
     } catch (error) {
       console.error(error)
     }
