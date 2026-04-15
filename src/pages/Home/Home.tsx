@@ -35,6 +35,8 @@ export function Home({ toggleTheme }: HomeProps) {
   const theme = useTheme()
 
   function handleOpenModal(replyTweetId?: string) {
+    console.log('CLICK NO COMENTÁRIO:', replyTweetId)
+
     setReplyTo(replyTweetId || null)
     setOpenModal(true)
   }
