@@ -38,7 +38,7 @@ export function Profile({ toggleTheme }: ProfileProps) {
 
     try {
       const response = await fetch(
-        `https://growtwitter-1.onrender.com/users/${userId}/tweets`,
+        `https://growtwitter-1.onrender.com/tweets/users/${userId}/tweets`,
         {
           method: 'GET',
           headers: {
@@ -48,31 +48,26 @@ export function Profile({ toggleTheme }: ProfileProps) {
         }
       )
 
-      console.log('STATUS:', response.status)
-      console.log('HEADERS:', response.headers)
+      const data = await response.json()
+      if (data.success) {
+        const authUserId = JSON.parse(localStorage.getItem('user') || '{}').id
 
-      const text = await response.text()
-      console.log('RESPOSTA BRUTA:', text)
+        const mappedTweets = data.data.map((tweet: any) => ({
+          id: tweet.id,
+          content: tweet.content,
+          createdAt: tweet.createdAt,
+          username: tweet.author.username,
+          name: tweet.author.name,
+          authorId: tweet.author.id,
+          imageUrl: tweet.author.imageUrl,
+          likesCount: tweet.likes.length,
+          likedByCurrentUser: tweet.likes.some(
+            (like: any) => like.author.id === authUserId
+          ),
+        }))
 
-      //   if (data.success) {
-      //     const authUserId = JSON.parse(localStorage.getItem('user') || '{}').id
-
-      //     const mappedTweets = data.data.map((tweet: any) => ({
-      //       id: tweet.id,
-      //       content: tweet.content,
-      //       createdAt: tweet.createdAt,
-      //       username: user.username,
-      //       name: user.name,
-      //       authorId: tweet.author.id,
-      //       imageUrl: user.imageUrl,
-      //       likesCount: tweet.likes.length,
-      //       likedByCurrentUser: tweet.likes.some(
-      //         (like: any) => like.author.id === authUserId
-      //       ),
-      //     }))
-
-      //     setTweets(mappedTweets)
-      //   }
+        setTweets(mappedTweets)
+      }
     } catch (error) {
       console.error(error)
     }
