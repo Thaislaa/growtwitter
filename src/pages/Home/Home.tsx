@@ -44,11 +44,6 @@ export function Home({ toggleTheme }: HomeProps) {
     setReplyTo(null)
   }
 
-  useEffect(() => {
-    console.log('🔥 Home montou')
-    loadFeed()
-  }, [])
-
   async function handleDeleteTweet(id: string) {
     const token = localStorage.getItem('token')
     if (!token) return
@@ -92,11 +87,8 @@ export function Home({ toggleTheme }: HomeProps) {
 
       const text = await response.text()
 
-      console.log('STATUS:', response.status)
-      console.log('RAW RESPONSE:', text)
-
       if (!response.ok) {
-        console.log('❌ ERRO HTTP')
+        console.log('ERRO HTTP')
         return
       }
 
@@ -104,7 +96,7 @@ export function Home({ toggleTheme }: HomeProps) {
       try {
         data = JSON.parse(text)
       } catch (err) {
-        console.log('❌ BACKEND NÃO ESTÁ RETORNANDO JSON')
+        console.log('BACKEND NÃO ESTÁ RETORNANDO JSON')
         return
       }
 
