@@ -107,6 +107,12 @@ export class TweetService {
       throw new HTTPError(403, "You are not allowed to delete this tweet");
     }
 
+    await prismaRepository.reply.deleteMany({
+      where: {
+        OR: [{ tweetId: dto.tweetId }, { replyId: dto.tweetId }],
+      },
+    });
+
     const tweetDeleted = await prismaRepository.tweet.delete({
       where: { id: dto.tweetId },
     });
