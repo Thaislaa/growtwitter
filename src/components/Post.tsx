@@ -3,7 +3,6 @@ import ChatBubbleOutlineOutlinedIcon from '@mui/icons-material/ChatBubbleOutline
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined'
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined'
 import { useState } from 'react'
-import { Hr } from './Hr'
 
 type Tweet = {
   id: string
@@ -95,8 +94,6 @@ export function Post({
 
   return (
     <>
-      {!isReply && <Hr />}
-
       <Box
         sx={{
           position: 'relative',
@@ -174,7 +171,7 @@ export function Post({
                     color: theme.palette.text.secondary,
                   }}
                 />
-                {tweet.commentsCount || 0} {/* ✅ CORRETO */}
+                {tweet.commentsCount || 0}
               </span>
             )}
 

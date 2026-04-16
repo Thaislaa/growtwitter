@@ -4,6 +4,7 @@ import { TrendsCard } from '../../components/TrendsCard'
 import { useEffect, useState } from 'react'
 import { Modal } from '../../components/Modal'
 import { Post } from '../../components/Post'
+import { Hr } from '../../components/Hr'
 
 interface HomeProps {
   toggleTheme: () => void
@@ -193,42 +194,39 @@ export function Home({ toggleTheme }: HomeProps) {
               Página Inicial
             </Typography>
 
+            <Hr />
+
             {/* Posts */}
             {tweets.map((tweet) => {
-              const repliesCount = tweet.replies?.length || 0
+              const replies = tweet.replies || []
+              const hasReplies = replies.length > 0
 
               return (
-                <Box key={tweet.id} sx={{ position: 'relative' }}>
-                  {/* Linha vertical */}
-                  {repliesCount > 0 && (
-                    <Box
-                      sx={{
-                        position: 'absolute',
-                        left: '30px',
-                        top: '30px',
-                        height: `${repliesCount * 100}px`,
-                        width: '2px',
-                        backgroundColor: '#ccc',
-                        zIndex: 0,
-                      }}
-                    />
-                  )}
-
+                <Box key={tweet.id}>
                   <Post
                     tweet={tweet}
                     onOpenModal={handleOpenModal}
                     onDelete={handleDeleteTweet}
                   />
-                  {/* Replies */}
-                  {tweet.replies?.map((reply) => (
-                    <Post
-                      key={reply.id}
-                      tweet={reply}
-                      isReply={true}
-                      onDelete={handleDeleteTweet}
-                      onOpenModal={handleOpenModal}
-                    />
-                  ))}
+
+                  {!hasReplies && <Hr />}
+
+                  {replies.map((reply, index) => {
+                    const isLast = index === replies.length - 1
+
+                    return (
+                      <div key={reply.id}>
+                        <Post
+                          tweet={reply}
+                          isReply={true}
+                          onDelete={handleDeleteTweet}
+                          onOpenModal={handleOpenModal}
+                        />
+
+                        {isLast && <Hr />}
+                      </div>
+                    )
+                  })}
                 </Box>
               )
             })}
