@@ -196,13 +196,27 @@ export function Home({ toggleTheme }: HomeProps) {
 
             <Hr />
 
-            {/* Posts */}
             {tweets.map((tweet) => {
               const replies = tweet.replies || []
               const hasReplies = replies.length > 0
 
               return (
-                <Box key={tweet.id}>
+                <Box key={tweet.id} sx={{ position: 'relative' }}>
+                  {/* linha vertical */}
+                  {hasReplies && (
+                    <Box
+                      sx={{
+                        position: 'absolute',
+                        left: '30px',
+                        top: '30px',
+                        height: `${replies.length * 100}px`,
+                        width: '2px',
+                        backgroundColor: '#ccc',
+                        zIndex: 0,
+                      }}
+                    />
+                  )}
+
                   <Post
                     tweet={tweet}
                     onOpenModal={handleOpenModal}
