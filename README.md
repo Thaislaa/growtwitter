@@ -4,8 +4,6 @@
 
 <p>Um projeto inspirado no Twitter, desenvolvido como desafio da GrowDev, com foco em interação social, feed personalizado e experiência de usuário moderna.</p>
 
-> "Mais que um clone, uma experiência social completa, feita por mim, do meu jeito."
-
 <img src="./src/assets/images/linha.png" alt="Linha laranja" width="100%" height="2px">
 
 <h2>
@@ -119,57 +117,31 @@ A seguir, algumas telas inspiradas no protótipo do projeto:
 
 <h2>
   <img src="https://icones.pro/wp-content/uploads/2021/06/icone-fleche-droite-orange.png" 
-       alt="Seta" width="25px" 
-       style="margin-right: 10px;">
-   Como Rodar o Projeto
+       width="25px">
+  Links
 </h2>
 
-1. Clone o repositório:
-
-```bash
-git clone https://github.com/Thaislaa/growtwitter.git
-```
-
-2. Entre na pasta do projeto:
-
-```bash
-cd growtwitter
-```
-
-3. Instale as dependências:
-
-```bash
-npm install
-```
-
-4. Inicie o servidor de desenvolvimento:
-
-```bash
-npm run dev
-```
-
-5. Acesse no seu navegador:
-
-```bash
-http://localhost:5173
-```
+- Protótipo original: https://deploy-growtwitter.vercel.app/login
+- Meu projeto online: https://growtwitter-1.onrender.com
+- Repositório GitHub: https://github.com/Thaislaa/growtwitter
 
 <img src="./src/assets/images/linha.png" alt="Linha laranja" width="100%" height="2px">
 
 <h2>
   <img src="https://icones.pro/wp-content/uploads/2021/06/icone-fleche-droite-orange.png" 
        width="25px">
-  Links
+  Usuários de teste
 </h2>
 
-- Protótipo original: https://deploy-growtwitter.vercel.app/login
-- Meu projeto online: https://growtwitter-sigma.vercel.app/login
-- Repositório GitHub: https://github.com/Thaislaa/growtwitter
+| Usuário  | Senha  |
+|----------|--------|
+| growdev  | 12345  |
+| karine   | 12345  |
+| thais    | 12345  |
+| toia     | 12345  |
 
 <img src="./src/assets/images/linha.png" alt="Linha laranja" width="100%" height="2px">
 
-<br>
 <p align="center">
   ✨ Desenvolvido por <strong>Thaisla da Veiga</strong>
 </p>
->>>>>>> 26d956fcfb2473c1b1dfea3f2095bf0eae4683de
