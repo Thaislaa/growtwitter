@@ -18,7 +18,7 @@ export function Modal({ handleClose, replyTo, reloadFeed }: ModalProps) {
 
     const url = replyTo
       ? 'https://growtwitter-1.onrender.com/tweets/replies'
-      : 'https://growtwitter-1.onrender.com/tweets'
+      : 'https://growtwitter-1.onrender.com/tweets/tweets'
 
     const body = replyTo ? { content, replyTo } : { content }
 
