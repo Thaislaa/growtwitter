@@ -47,12 +47,14 @@ export function Home({ toggleTheme }: HomeProps) {
   }
 
   async function handleDeleteTweet(id: string) {
+    console.log('CHAMANDO DELETE:', id)
+
     const token = localStorage.getItem('token')
     if (!token) return
 
     try {
       const response = await fetch(
-        `https://growtwitter-1.onrender.com/tweets/${id}`,
+        `https://growtwitter-1.onrender.com/tweets/tweets/${id}`,
         {
           method: 'DELETE',
           headers: {
