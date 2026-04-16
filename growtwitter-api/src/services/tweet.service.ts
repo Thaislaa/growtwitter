@@ -113,6 +113,12 @@ export class TweetService {
       },
     });
 
+    await prismaRepository.like.deleteMany({
+      where: {
+        tweetId: dto.tweetId,
+      },
+    });
+
     const tweetDeleted = await prismaRepository.tweet.delete({
       where: { id: dto.tweetId },
     });
