@@ -5,7 +5,7 @@ import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined
 import { useState } from 'react'
 import { Hr } from './Hr'
 
-interface Tweet {
+type Tweet = {
   id: string
   content: string
   createdAt: string
@@ -14,6 +14,7 @@ interface Tweet {
   authorId: string
   imageUrl?: string
   likesCount?: number
+  commentsCount?: number
   likedByCurrentUser?: boolean
 }
 
@@ -22,7 +23,6 @@ interface PostProps {
   onDelete?: (id: string) => void
   onOpenModal?: (id: string) => void
   isReply?: boolean
-  repliesCount?: number
 }
 
 function formatTweetDate(createdAt: string) {
@@ -45,7 +45,6 @@ export function Post({
   onDelete,
   onOpenModal,
   isReply = false,
-  repliesCount = 0,
 }: PostProps) {
   const theme = useTheme()
   const [likesCount, setLikesCount] = useState(tweet.likesCount || 0)
@@ -175,7 +174,7 @@ export function Post({
                     color: theme.palette.text.secondary,
                   }}
                 />
-                {repliesCount || 0}
+                {tweet.commentsCount || 0} {/* ✅ CORRETO */}
               </span>
             )}
 

@@ -21,6 +21,7 @@ type Tweet = {
   authorId: string
   imageUrl?: string
   likesCount?: number
+  commentsCount?: number
   likedByCurrentUser?: boolean
 }
 
@@ -61,8 +62,9 @@ export function Profile({ toggleTheme }: ProfileProps) {
           name: tweet.author.name,
           authorId: tweet.author.id,
           imageUrl: tweet.author.imageUrl,
-          likesCount: tweet.likes.length,
-          likedByCurrentUser: tweet.likes.some(
+          likesCount: tweet.likes?.length || 0,
+          commentsCount: tweet.replies?.length || 0, // 🔥 AQUI
+          likedByCurrentUser: tweet.likes?.some(
             (like: any) => like.author.id === authUserId
           ),
         }))

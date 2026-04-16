@@ -114,6 +114,7 @@ export function Home({ toggleTheme }: HomeProps) {
           authorId: tweet.author.id,
           imageUrl: tweet.author.imageUrl,
           likesCount: tweet.likes?.length || 0,
+          commentsCount: tweet.replies?.length || 0,
           likedByCurrentUser: tweet.likes?.some(
             (like: BackendLike) => like.author.id === currentUserId
           ),
@@ -217,7 +218,6 @@ export function Home({ toggleTheme }: HomeProps) {
                     tweet={tweet}
                     onOpenModal={handleOpenModal}
                     onDelete={handleDeleteTweet}
-                    repliesCount={tweet.replies?.length || 0}
                   />
                   {/* Replies */}
                   {tweet.replies?.map((reply) => (
