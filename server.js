@@ -5,6 +5,7 @@ import { AuthRoutes } from './growtwitter-api/dist/routes/auth.routes.js'
 import { UsersRoutes } from './growtwitter-api/dist/routes/users.routes.js'
 import { TweetsRoutes } from './growtwitter-api/dist/routes/tweets.routes.js'
 import { LikesRoutes } from './growtwitter-api/dist/routes/likes.routes.js'
+import { FollowersRoutes } from './growtwitter-api/dist/routes/followers.routes.js'
 
 const app = express()
 const PORT = process.env.PORT || 3000
@@ -21,6 +22,7 @@ app.use('/auth', AuthRoutes.bind())
 app.use('/users', UsersRoutes.bind())
 app.use('/tweets', TweetsRoutes.bind())
 app.use('/likes', LikesRoutes.bind())
+app.use('/followers', FollowersRoutes.bind())
 
 app.use(express.static(distPath))
 
